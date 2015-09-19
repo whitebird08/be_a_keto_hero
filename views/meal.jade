@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  h1 List of Meals
+  p objects to tables
+
+  table(border = '1')
+    thead
+      tr
+        th Meal Name
+        th Pro 
+        th Fat 
+        th Cho 
+        th
+          a(href='/meal/:id/edit') Edit
+
+    tbody
+      //- each item, i in info.all
+        tr
+          td 
+            a(href='/') #{item.meal_name}
+          td #{item.pro_ratio}
+          td #{item.fat_ratio}
+          td #{item.cho_ratio}
+   

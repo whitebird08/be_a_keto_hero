@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  h1 build a new meal
+
+  form(action="/meal/", method="post")
+      div
+        label  Meal Name
+          input(type="text" name="total_grams")
+      div
+        label Food1
+          input(type="submit" value="select a food")
+          input(type="text" name="")
+      div
+        label Food2
+          input(type="submit" value="select a food")
+          input(type="text" name="")
+      div
+        label Food3
+        input(type="submit" value="select a food")
+        input(type="text" name="")
+       div
+        label Food4
+        input(type="submit" value="select a food")
+        input(type="text" name="")
+      div
+        label Food5
+        input(type="submit" value="select a food")
+        input(type="text" name="")
+      div
+        input(type="submit" value='save new meal')

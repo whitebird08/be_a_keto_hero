@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  h1 newfood
+  p enter food specs
+  
+
+  form(action="/food/", method="post")
+    div
+      label Total Grams
+        input(type="text" name="total_grams")
+    div
+      label Food Name
+        input(type="text" name="food_name")
+    div
+      label Protien
+        input(type="text" name="protien")
+    div
+      label Fat
+        input(type="text" name="protien")
+    div
+      label Carbs
+      input(type="text" name="carbs")
+    div
+      input(type="submit" value='update food')

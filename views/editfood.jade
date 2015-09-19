@@ -1,0 +1,43 @@
+ form(action="/food/" + _:id + "/edit", method="post")
+    div
+      label Total Grams
+        input(type="text" name="total_grams")
+    div
+      label Food Name
+        input(type="text" name="food_name")
+    div
+      label Protien
+        input(type="text" name="protien")
+    div
+      label Fat
+        input(type="text" name="protien")
+    div
+      label Carbs
+      input(type="text" name="carbs")
+    div
+      input(type="submit" value='save new food')
+
+  //- "totalNutrients" : {
+  //-   "ENERC_KCAL" : {
+  //-     "label" : "Energy",
+  //-     "quantity" : 21814.306200000003,
+  //-     "unit" : "kcal"
+  //-   },
+  //-   "FAT" : {
+  //-     "label" : "Fat",
+  //-     "quantity" : 1562.5579472000002,
+  //-     "unit" : "g"
+  //-   },
+   
+  //-   "CHOCDF" : {
+  //-     "label" : "Carbs",
+  //-     "quantity" : 390.41195,
+  //-     "unit" : "g"
+  //-   },
+   
+  //-   "PROCNT" : {
+  //-     "label" : "Protein",
+  //-     "quantity" : 1466.6697507999997,
+  //-     "unit" : "g"
+  //-   }
+  //- }
