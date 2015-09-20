@@ -3,63 +3,37 @@ extends layout
 block content
 
   h1 list of foods
-  p objects to tables!
  
   table(border='1')
     thead
       tr
+        th Show
         th Name
         th Pro
         th Fat
         th Cho
-        th
-          a(href='/food/:id/edit') Edit
-        th
-          a(href='/food/:id/show') Show
-        th
-          a(href='/food/newfood') New 
-        th
-          a(href='/meal/:id/edit') Add To Meal
+        th Edit 
+        th Add To Meal
             //if meal/:id if has value goto that id
             //else goto newmeal
 
-
-  tbody
-    //- for food in allFoods
+    for food in allFoods
       tr
+        th 
+            a(href='/food/' + food._id) Show
         td
-            a(href='/food/' + food._id)= food_name.name
+            a(href='/food/' + food._id)= food.food_name
         td
-            a(href='/food/' + food._id)= pro.quantity
+            a(href='/food/' + food._id)= food.protien_grams
         td
-            a(href='/food/' + food._id)= fat.quantity
+            a(href='/food/' + food._id)= food.fat_grams
         td
-            a(href='/food/' + food._id)= cho.quantity
+            a(href='/food/' + food._id)= food.carbs_grams
+        td
+            a(href='/food/' + food._id + '/editfood') Edit
 
         td
-            a(href="/food/" + food._id + '/edit') Edit
-         td
-            
-
-    //-       td food._id
-
-    //-       extends layout
-
-//- block content
-
-//-   h1 Listing of All People
-
-//-   table(border = '1')
-//-       thead
-//-         tr
-//-           th first_name
-//-           th last_name
-//-           th date_of_birth
-
-//-       tbody
-//-         each item, i in info.all
-//-           tr
-//-             td 
-//-               a(href='/') #{item.first_name}
-//-             td #{item.last_name}
-//-             td #{item.date_of_birth}
+            a(href='/meal/:id/editmeal') Add To Meal
+  tr
+      form(action="/food/newfood", method="post")
+      input(type="submit" value='add new food')
