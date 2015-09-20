@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+  h1 Showing FoodName#{item.food_name}
+  p objects to tables!
+ 
+  table(border='1')
+    thead
+      tr
+        th Name
+        th Pro
+        th Fat
+        th Cho
+        th
+          a(href='/food/:id/edit') Edit
+        th
+          a(href='/meal/:id/edit') Add To Meal
+            //if meal/:id if has value goto that id
+            //else goto newmeal
+
+    tbody
+    //- each item, i in info.all
+      tr
+        td 
+          a(href='/') #{item.meal_name}
+        td #{item.pro_ratio}
+        td #{item.fat_ratio}
+        td #{item.cho_ratio}

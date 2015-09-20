@@ -14,30 +14,31 @@ block content
         th Cho
         th
           a(href='/food/:id/edit') Edit
+        th
+          a(href='/food/:id/show') Show
+        th
+          a(href='/food/newfood') New 
+        th
+          a(href='/meal/:id/edit') Add To Meal
+            //if meal/:id if has value goto that id
+            //else goto newmeal
 
-    tbody
-    //- each item, i in info.all
+
+  tbody
+    //- for food in allFoods
       tr
-        td 
-          a(href='/') #{item.meal_name}
-        td #{item.pro_ratio}
-        td #{item.fat_ratio}
-        td #{item.cho_ratio}
-    //- tbody
-    //-   //- for album in allFoods
-    //-     tr
-    //-       td
-    //-           a(href='/food/' + food._id)= foodname.name
-    //-       td
-    //-           a(href='/food/' + food._id)= foodname.pro
-    //-       td
-    //-           a(href='/food/' + food._id)= foodname.fat
-    //-       td
-    //-           a(href='/food/' + food._id)= foodname.cho
+        td
+            a(href='/food/' + food._id)= food_name.name
+        td
+            a(href='/food/' + food._id)= pro.quantity
+        td
+            a(href='/food/' + food._id)= fat.quantity
+        td
+            a(href='/food/' + food._id)= cho.quantity
 
-    //-       td
-    //-           a(href="/food/" + food._id + '/edit') Edit
-    //-        td
+        td
+            a(href="/food/" + food._id + '/edit') Edit
+         td
             
 
     //-       td food._id
