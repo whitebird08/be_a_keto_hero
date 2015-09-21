@@ -3,56 +3,53 @@ extends layout
 block content
 
   h1 List of Meals
+  a(href='/') Back to Nav
 
   table(border = '1')
     thead
       tr
         th Show
         th Meal Name
-        th 
         th PRO%
         th FAT%
         th CHO%
         th quantity
-        th Meal Name
+        th Food Name
         th PROg
         th FATg
         th CHOg
-        //- meal_item1:{quantity:Number, foodname: text, 
-        //-       pro_grams: Number, fat_grams: Number, cho_grams: Number, 
-        //-         pro_percent: Number, fat_percent: Number, cho_percent: Number
-            },
 
     for meal in allMeals
           tr
             th 
                 a(href='/meal/' + meal._id) Show
             td
-                a(href='/meal/' + meal._id)= meal.meal_name
+                a(meal_it._id)= meal.meal_name
+
+            td
+            td
+            td
             //- td
-            //-     a(href='/meal/' + meal._id)= meal.meal_item1
-            //- td
-            //-     a(href='/meal/' + meal._id)= meal.meal_item2
-            //- td
-            //-     a(href='/meal/' + meal._id)= meal.meal_item3
-            //- td
-            //-     a(href='/meal/' + meal._id)= meal.meal_item4
-            //- td
-            //-     a(href='/meal/' + meal._id)= meal.meal_item5
+            //-     a(food._id)= food.food_name
             td
                 a(href='/meal/' + meal._id + '/editmeal') Edit
-  table(border = '1')
-    thead
-      tr
-        th Show
-        th totalPRO%
-        th totalFAT%
-        th totalCHO%
-        th totalquantity
-        th totalMeal Name
-        th totalPROg
-        th totalFATg
-        th totalCHOg
+            
+     
+      thead
+        tr
+          th Show
+          th totalPRO%
+          th totalFAT%
+          th totalCHO%
+          th totalquantity
+          th totalMeal Name
+          th totalPROg
+          th totalFATg
+          th totalCHOg
+a(href='/meal/' + meal._id + '/editmeal') Edit
+
+      
+
 
 
    

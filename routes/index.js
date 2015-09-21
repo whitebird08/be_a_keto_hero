@@ -4,6 +4,8 @@ var router = express.Router();
 var db = require('monk')('localhost/keto');
 var foodsCollection = db.get('foods');
 var mealsCollection = db.get('meals');
+var mealItemsCollection = db.get('meal_items')
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -39,10 +41,14 @@ router.get('/food/:id/editfood', function(req, res, next) {
 });
 
 router.get('/meal/newmeal', function(req, res, next){
+  console.log('NEWMEAL?????')
+  foodsCollection.find({}, function (err, foods) {
+    res.render('newmeal', {allFoods: foods});
+  });
   console.log('GET NEWMEAL')
-  res.render('newmeal')
+// res.render('newmeal')
 
-  res.redirect('/');
+  // res.redirect('/');
 });
 
 router.get('/meal', function(req, res, next){
@@ -113,16 +119,15 @@ router.post('/meal/:id/delete', function(req, res, next) {
 
 router.post('/meal', function(req, res, next) {
   console.log('POST MEAL')
-  mealsCollection.insert({ meal_name: req.body.meal_name, 
-                           meal_item1: req.body.meal_item, //food _id but with a new/adjusted quantity value for /edit
-                           meal_item2: req.body.meal_item, //food _id
-                           meal_item3: req.body.meal_item, //food _id
-                           meal_item4: req.body.meal_item, //food _id
-                           meal_item5: req.body.meal_item  //food _id
+  mealItemsCollection.insert({  meal_name: req.body.meal_name, 
+                                meal_item1: req.body.meal_item1,
+                                meal_item2: req.body.meal_item2
+
   });
     console.log('POST REDIRECT MEAL')
   res.redirect('/meal');
-});
+ });
+console.log('FANCY PANTS')
 
 router.post('/meal/:id', function(req, res, next) {
    mealsCollection.updateById({_id: req.params.id}, function (err, meals) {
@@ -133,12 +138,8 @@ router.post('/meal/:id', function(req, res, next) {
 router.post('/meal/:id/editmeal', function(req, res, next) {
 console.log('POST EDITMEAL')
     mealsCollection.updateById(req.params.id, {
-                           meal_name: req.body.meal_name, 
-                           meal_item1: req.body.meal_item, //food _id but with a new/adjusted quantity value for /edit
-                           meal_item2: req.body.meal_item, //food _id
-                           meal_item3: req.body.meal_item, //food _id
-                           meal_item4: req.body.meal_item, //food _id
-                           meal_item5: req.body.meal_item  
+                           meal_name: req.body.meal_name,
+                           food_name: req.body.food_name                     
                           },function (err, meals) {
     res.redirect('/meal/' + req.params.id);
     console.log('POST REDIRECT EDITMEAL')

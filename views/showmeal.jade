@@ -7,20 +7,13 @@ block content
   table(border='1')
     thead
       tr
-        th Quantity
         th Name
-        th Pro
-        th Fat
-        th Cho
+        th Food1
+        th Food2
       tr
-        td= allMeals.quantity 
         td= allMeals.meal_name
-        td= allMeals.meal_item1
-        td= allMeals.meal_item2
-        td= allMeals.meal_item3
-        td= allMeals.meal_item4
-        td= allMeals.meal_item5
-
+        td
+        td
   tr
     a(href='/meal/' + allMeals._id + '/editmeal') Edit
   tr
