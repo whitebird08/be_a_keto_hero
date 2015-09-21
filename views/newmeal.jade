@@ -5,30 +5,35 @@ block content
   h1 build a new meal
 
   form(action="/meal/", method="post")
-      div
-        label  Meal Name
-          input(type="text" name="total_grams")
-      div
-        label Food1
-          //- input (id='meal_item1' type="button" name="select_food1" value="select a food" onclick=" location.href='index/food' ")
-          input(type="text" name="meal_item")
-      div
-        label Food2
-          //- input (id='meal_item2' type="button" name="select_food2" value="select a food" onclick=" location.href='index/food' ")
-          input(type="text" name="meal_item")
-      div
-        label Food3
-          //- input (id='meal_item3' type="button" name="select_food3" value="select a food" onclick=" location.href='index/food' ")
-          input(type="text" name="meal_item")
-      div
-        label Food4
-          //- input (id='meal_item4' type="button" name="select_food4" value="select a food" onclick=" location.href='index/food' ")
-          input(type="text" name="meal_item")
-      div
-        label Food5
-          //- input (id='meal_item5' type="button" name="select_food5" value="select a food" onclick=" location.href='index/food' ")
-          input(type="text" name="meal_item")
-      div
-        input(type="submit" value='save new meal')
+    div
+      label  Meal Name
+        input(type="text" name="meal_name")
+    div
+      label Food1
+        //- a(href='/food/') Select A Food
+        input(id='meal_item1' type="button" name="select_food1" value="select a food" onclick=" location.href='/food/' ")
+        input(type="text" name="meal_item")
+    div
+      label Food2
+        //- input (id='meal_item2' type="button" name="select_food2" value="select a food" onclick=" location.href='index/food' ")
+        input(type="text" name="meal_item")
+    div
+      label Food3
+        //- input (id='meal_item3' type="button" name="select_food3" value="select a food" onclick=" location.href='index/food' ")
+        input(type="text" name="meal_item")
+    div
+      label Food4
+        //- input (id='meal_item4' type="button" name="select_food4" value="select a food" onclick=" location.href='index/food' ")
+        input(type="text" name="meal_item")
+    div
+      label Food5
+        //- input (id='meal_item5' type="button" name="select_food5" value="select a food" onclick=" location.href='index/food' ")
+        input(type="text" name="meal_item")
+    div
+      input(type="submit" value='save new meal')
+
+    //- form(action='/meal/' + allFoods._id + "/delete", method='post', name='delete')
+    //-   button(type='submit') Delete
+    //-   input(type="text" name="food_name" value=allFoods.food_name)
 
     

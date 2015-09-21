@@ -7,21 +7,52 @@ block content
   table(border = '1')
     thead
       tr
+        th Show
         th Meal Name
-        th Pro 
-        th Fat 
-        th Cho 
-        th
-          a(href='/meal/:id/edit') Edit
-        th
-          a(href='/meal/:id/show') Show
+        th 
+        th PRO%
+        th FAT%
+        th CHO%
+        th quantity
+        th Meal Name
+        th PROg
+        th FATg
+        th CHOg
+        //- meal_item1:{quantity:Number, foodname: text, 
+        //-       pro_grams: Number, fat_grams: Number, cho_grams: Number, 
+        //-         pro_percent: Number, fat_percent: Number, cho_percent: Number
+            },
 
-    tbody
-      //- each item, i in info.all
-        tr
-          td 
-            a(href='/') #{item.meal_name}
-          td #{item.pro_ratio}
-          td #{item.fat_ratio}
-          td #{item.cho_ratio}
+    for meal in allMeals
+          tr
+            th 
+                a(href='/meal/' + meal._id) Show
+            td
+                a(href='/meal/' + meal._id)= meal.meal_name
+            //- td
+            //-     a(href='/meal/' + meal._id)= meal.meal_item1
+            //- td
+            //-     a(href='/meal/' + meal._id)= meal.meal_item2
+            //- td
+            //-     a(href='/meal/' + meal._id)= meal.meal_item3
+            //- td
+            //-     a(href='/meal/' + meal._id)= meal.meal_item4
+            //- td
+            //-     a(href='/meal/' + meal._id)= meal.meal_item5
+            td
+                a(href='/meal/' + meal._id + '/editmeal') Edit
+  table(border = '1')
+    thead
+      tr
+        th Show
+        th totalPRO%
+        th totalFAT%
+        th totalCHO%
+        th totalquantity
+        th totalMeal Name
+        th totalPROg
+        th totalFATg
+        th totalCHOg
+
+
    

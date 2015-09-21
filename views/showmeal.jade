@@ -21,5 +21,10 @@ block content
         td= allMeals.meal_item4
         td= allMeals.meal_item5
 
-  td
-    a(href='/meal/:id/edit') Edit
+  tr
+    a(href='/meal/' + allMeals._id + '/editmeal') Edit
+  tr
+    a(href='/meal/') Back to Meal List
+  tr
+    form(action='/meal/' + allMeals._id + "/delete", method='post', name='delete')
+      button(type='submit') Delete

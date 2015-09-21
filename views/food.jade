@@ -14,8 +14,6 @@ block content
         th Cho
         th Edit 
         th Add To Meal
-            //if meal/:id if has value goto that id
-            //else goto newmeal
 
     for food in allFoods
       tr
@@ -35,5 +33,5 @@ block content
         td
             a(href='/meal/:id/editmeal') Add To Meal
   tr
-      form(action="/food/newfood", method="post")
-      input(type="submit" value='add new food')
+    a(href="/food/newfood") Add New Food
+     

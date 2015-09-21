@@ -1,21 +1,29 @@
-form(action="/editmeal/" + _:id + "/edit", method="post")
+extends layout
+
+block content
+
+  form(action="/meal/" + allMeals._id + "/editmeal", method="post")
     div
       label  Meal Name
         input(type="text" name="total_grams")
     div
       label Food1
-        input(type="text" name="")
+        input(type="text" name="meal_item")
     div
       label Food2
-        input(type="text" name="")
+        input(type="text" name="meal_item")
     div
       label Food3
-      input(type="text" name="")
+      input(type="text" name="meal_item")
      div
       label Food4
-        input(type="text" name="")
+        input(type="text" name="meal_item")
     div
       label Food5
-      input(type="text" name="")
+      input(type="text" name="meal_item")
     div
       input(type="submit" value='save new meal')
+
+      //-     div
+      //- label  Meal Name
+      //-   input(type="text" name="total_grams" value=allFoods.food_name)

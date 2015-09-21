@@ -39,14 +39,18 @@ router.get('/food/:id/editfood', function(req, res, next) {
 });
 
 router.get('/meal/newmeal', function(req, res, next){
+  console.log('GET NEWMEAL')
   res.render('newmeal')
 
   res.redirect('/');
 });
 
 router.get('/meal', function(req, res, next){
-  res.render('meal')
+  console.log('GET MEAL')
+  mealsCollection.find({}, function (err, meals) {
+  res.render('meal', {allMeals: meals});
 
+  });
 });
 
 router.get('/meal/:id', function(req, res, next) {
@@ -57,14 +61,16 @@ router.get('/meal/:id', function(req, res, next) {
 
 
 router.get('/meal/:id/editmeal', function(req, res, next) {
+    console.log('GET EDITMEAL')
   mealsCollection.findOne({_id: req.params.id}, function (err, meals) {
-    res.render('/food/',{allMeals: meals});
+    res.render('editmeal',{allMeals: meals});
+    console.log('GET RENDER EDITMEAL')
   });
 });
 
 router.post('/food/:id/delete', function(req, res, next) {
   foodsCollection.remove({_id: req.params.id}, function (err, foods) {
-      res.redirect('food');
+      res.redirect('/food');
   });
 });
 
@@ -101,11 +107,12 @@ router.post('/food/:id/editfood', function(req, res, next) {
 
 router.post('/meal/:id/delete', function(req, res, next) {
   mealsCollection.remove({_id: req.params.id}, function (err, meals) {
-      res.redirect('meal');
+      res.redirect('/meal');
   });
 });
 
 router.post('/meal', function(req, res, next) {
+  console.log('POST MEAL')
   mealsCollection.insert({ meal_name: req.body.meal_name, 
                            meal_item1: req.body.meal_item, //food _id but with a new/adjusted quantity value for /edit
                            meal_item2: req.body.meal_item, //food _id
@@ -113,7 +120,8 @@ router.post('/meal', function(req, res, next) {
                            meal_item4: req.body.meal_item, //food _id
                            meal_item5: req.body.meal_item  //food _id
   });
-  res.redirect('meal');
+    console.log('POST REDIRECT MEAL')
+  res.redirect('/meal');
 });
 
 router.post('/meal/:id', function(req, res, next) {
@@ -121,6 +129,22 @@ router.post('/meal/:id', function(req, res, next) {
     res.render('showmeal', {allMeals: meals}); 
   });
 });
+
+router.post('/meal/:id/editmeal', function(req, res, next) {
+console.log('POST EDITMEAL')
+    mealsCollection.updateById(req.params.id, {
+                           meal_name: req.body.meal_name, 
+                           meal_item1: req.body.meal_item, //food _id but with a new/adjusted quantity value for /edit
+                           meal_item2: req.body.meal_item, //food _id
+                           meal_item3: req.body.meal_item, //food _id
+                           meal_item4: req.body.meal_item, //food _id
+                           meal_item5: req.body.meal_item  
+                          },function (err, meals) {
+    res.redirect('/meal/' + req.params.id);
+    console.log('POST REDIRECT EDITMEAL')
+ 
+  });
+});   
 
 
 
