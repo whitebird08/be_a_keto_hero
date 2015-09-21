@@ -3,20 +3,20 @@ extends layout
 block content
 
   form(action="/food/" + allFoods._id + "/editfood", method="post")
-  div
-    label Total Grams
-      input(type="text" name="total_grams")
-  div
-    label Food Name
-      input(type="text" name="food_name")
-  div
-    label Protien
-      input(type="text" name="protien_grams")
-  div
-    label Fat
-      input(type="text" name="fat_grams")
-  div
-    label Carbs
-    input(type="text" name="carbs_grams")
-  div
-    input(type="submit" value='save food')
+      div
+        label Total Grams
+          input(type="text" name="total_grams" value=allFoods.total_grams)
+      div
+        label Food Name
+          input(type="text" name="food_name" value=allFoods.food_name)
+      div
+        label Protien
+          input(type="text" name="protien_grams" value=allFoods.protien_grams)
+      div
+        label Fat
+          input(type="text" name="fat_grams" value=allFoods.fat_grams)
+      div
+        label Carbs
+        input(type="text" name="carbs_grams" value=allFoods.carbs_grams)
+      div
+        input(type="submit" value='save food')

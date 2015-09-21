@@ -31,11 +31,12 @@ router.get('/food/:id', function(req, res, next) {
 
 
 router.get('/food/:id/editfood', function(req, res, next) {
+ console.log('GET EDITFOOD')
  foodsCollection.findOne({_id: req.params.id}, function (err, foods) {
     res.render('editfood', {allFoods: foods});
+     console.log('RENDER EDITFOOD')
   });
 });
-
 
 router.get('/meal/newmeal', function(req, res, next){
   res.render('newmeal')
@@ -57,7 +58,7 @@ router.get('/meal/:id', function(req, res, next) {
 
 router.get('/meal/:id/editmeal', function(req, res, next) {
   mealsCollection.findOne({_id: req.params.id}, function (err, meals) {
-    res.render('editmeal',{allMeals: meals});
+    res.render('/food/',{allMeals: meals});
   });
 });
 
@@ -85,17 +86,18 @@ router.post('/food/:id', function(req, res, next) {
 });
 
 router.post('/food/:id/editfood', function(req, res, next) {
-  albumCollection.updateById(req.params.id, {
+   console.log('POST EDITFOOD')
+    foodsCollection.updateById(req.params.id, {
                           total_grams: req.body.total_grams, 
                           food_name: req.body.food_name, 
                           protien_grams: req.body.protien_grams, 
                           fat_grams: req.body.fat_grams,
                           carbs_grams: req.body.carbs_grams
                           },function (err, foods) {
-
     res.redirect('/food/' + req.params.id);
+       console.log('POST RENDERFOOD')
   });
-});
+});   
 
 router.post('/meal/:id/delete', function(req, res, next) {
   mealsCollection.remove({_id: req.params.id}, function (err, meals) {
