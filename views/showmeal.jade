@@ -11,13 +11,21 @@ block content
         th Food1
         th Food2
       tr
-        td= allMeals.meal_name
-        td
-        td
+         td
+          a(meal._id)= meal.name
+          a(meal._id)= meal.food
+          
+
+
+     
+           
+              
+              
+
   tr
-    a(href='/meal/' + allMeals._id + '/editmeal') Edit
+    a(href='/meal/' + meal._id + '/editmeal') Edit
   tr
     a(href='/meal/') Back to Meal List
   tr
-    form(action='/meal/' + allMeals._id + "/delete", method='post', name='delete')
+    form(action='/meal/' + meal._id + "/delete", method='post', name='delete')
       button(type='submit') Delete

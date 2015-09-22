@@ -24,30 +24,18 @@ block content
             th 
                 a(href='/meal/' + meal._id) Show
             td
-                a(meal_it._id)= meal.meal_name
-
-            td
-            td
-            td
-            //- td
-            //-     a(food._id)= food.food_name
+                a(meal._id)= meal.name
             td
                 a(href='/meal/' + meal._id + '/editmeal') Edit
-            
-     
-      thead
-        tr
-          th Show
-          th totalPRO%
-          th totalFAT%
-          th totalCHO%
-          th totalquantity
-          th totalMeal Name
-          th totalPROg
-          th totalFATg
-          th totalCHOg
-a(href='/meal/' + meal._id + '/editmeal') Edit
 
+    p
+        a(href="/food/newfood") newfood
+    p
+        a(href="/food") foods
+    p
+        a(href="/meal/newmeal") newmeal
+    p
+        a(href="/meal") meals
       
 
 

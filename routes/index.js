@@ -6,7 +6,6 @@ var foodsCollection = db.get('foods');
 var mealsCollection = db.get('meals');
 var mealItemsCollection = db.get('meal_items')
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'ketoHero' });
@@ -31,7 +30,6 @@ router.get('/food/:id', function(req, res, next) {
   });
 });
 
-
 router.get('/food/:id/editfood', function(req, res, next) {
  console.log('GET EDITFOOD')
  foodsCollection.findOne({_id: req.params.id}, function (err, foods) {
@@ -46,9 +44,6 @@ router.get('/meal/newmeal', function(req, res, next){
     res.render('newmeal', {allFoods: foods});
   });
   console.log('GET NEWMEAL')
-// res.render('newmeal')
-
-  // res.redirect('/');
 });
 
 router.get('/meal', function(req, res, next){
@@ -60,20 +55,40 @@ router.get('/meal', function(req, res, next){
 });
 
 router.get('/meal/:id', function(req, res, next) {
-  mealsCollection.findOne({_id: req.params.id}, function (err, meals) {
-    res.render('showmeal',{allMeals: meals}); 
+  mealsCollection.findOne({_id: req.params.id}, function (err, meal) {
+    console.log(meal)
+    res.render('showmeal',{meal: meal}); 
   });
 });
 
 
 router.get('/meal/:id/editmeal', function(req, res, next) {
     console.log('GET EDITMEAL')
-  mealsCollection.findOne({_id: req.params.id}, function (err, meals) {
-    res.render('editmeal',{allMeals: meals});
-    console.log('GET RENDER EDITMEAL')
+    mealsCollection.find({_id: req.params.id}, function (err, meals) {   
+      foodsCollection.find({}, function (err, foods) {           
+    res.render('editmeal',{allMeals: meals, allFoods: foods});
+
+  });        
+
   });
 });
+///////////////////
+// router.get('/meal/:id/editmeal', function(req, res, next) {
 
+//     function mealWithAllFoods(id){
+//       var meal = mealsCollection.findOne({_id: id})
+//       meal.foods = foodsCollection.find({mealId: id}).toArray()
+//       return meal
+//     }
+
+//     mealsCollection.findOne({_id: req.params.id}, function (err, meals) {           
+//     res.render('editmeal',{allMeals: meals}, mealWithAllFoods);
+
+//   });
+// });
+
+
+//////////////////////
 router.post('/food/:id/delete', function(req, res, next) {
   foodsCollection.remove({_id: req.params.id}, function (err, foods) {
       res.redirect('/food');
@@ -119,14 +134,18 @@ router.post('/meal/:id/delete', function(req, res, next) {
 
 router.post('/meal', function(req, res, next) {
   console.log('POST MEAL')
-  mealItemsCollection.insert({  meal_name: req.body.meal_name, 
-                                meal_item1: req.body.meal_item1,
-                                meal_item2: req.body.meal_item2
-
-  });
-    console.log('POST REDIRECT MEAL')
+  console.log(req.body)
+  
+  var meal = {};
+  meal.name = req.body.name
+  meal.foods = []
+  meal.foods.push(req.body.meal_item1)
+  meal.foods.push(req.body.meal_item2)
+  console.log(meal)
+  mealsCollection.insert(meal);
   res.redirect('/meal');
  });
+
 console.log('FANCY PANTS')
 
 router.post('/meal/:id', function(req, res, next) {
@@ -138,13 +157,16 @@ router.post('/meal/:id', function(req, res, next) {
 router.post('/meal/:id/editmeal', function(req, res, next) {
 console.log('POST EDITMEAL')
     mealsCollection.updateById(req.params.id, {
-                           meal_name: req.body.meal_name,
-                           food_name: req.body.food_name                     
+                            meal_name: req.body.meal_name,
+                            meal_item1: req.body.meal_item1,
+                            meal_item2: req.body.meal_item2                   
                           },function (err, meals) {
     res.redirect('/meal/' + req.params.id);
+
     console.log('POST REDIRECT EDITMEAL')
  
-  });
+    });
+
 });   
 
 
