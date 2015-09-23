@@ -49,6 +49,7 @@ router.get('/meal/newmeal', function(req, res, next){
 router.get('/meal', function(req, res, next){
   console.log('GET MEAL')
   mealsCollection.find({}, function (err, meals) {
+    
   res.render('meal', {allMeals: meals});
 
   });
@@ -56,7 +57,6 @@ router.get('/meal', function(req, res, next){
 
 router.get('/meal/:id', function(req, res, next) {
   mealsCollection.findOne({_id: req.params.id}, function (err, meal) {
-    console.log(meal)
     res.render('showmeal',{meal: meal}); 
   });
 });
@@ -64,9 +64,9 @@ router.get('/meal/:id', function(req, res, next) {
 
 router.get('/meal/:id/editmeal', function(req, res, next) {
     console.log('GET EDITMEAL')
-    mealsCollection.find({_id: req.params.id}, function (err, meals) {   
+    mealsCollection.findOne({_id: req.params.id}, function (err, meal) {   
       foodsCollection.find({}, function (err, foods) {           
-    res.render('editmeal',{allMeals: meals, allFoods: foods});
+    res.render('editmeal',{theMeal: meal, allFoods: foods});
 
   });        
 
@@ -143,21 +143,22 @@ router.post('/meal', function(req, res, next) {
   meal.foods.push(req.body.meal_item2)
   console.log(meal)
   mealsCollection.insert(meal);
+
   res.redirect('/meal');
  });
 
 console.log('FANCY PANTS')
 
 router.post('/meal/:id', function(req, res, next) {
-   mealsCollection.updateById({_id: req.params.id}, function (err, meals) {
-    res.render('showmeal', {allMeals: meals}); 
+   mealsCollection.updateById({_id: req.params.id},  function (err, meal) {
+    res.render('showmeal', {theMeal: meal}); 
   });
 });
 
 router.post('/meal/:id/editmeal', function(req, res, next) {
 console.log('POST EDITMEAL')
     mealsCollection.updateById(req.params.id, {
-                            meal_name: req.body.meal_name,
+                            name: req.body.name,
                             meal_item1: req.body.meal_item1,
                             meal_item2: req.body.meal_item2                   
                           },function (err, meals) {
