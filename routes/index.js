@@ -41,48 +41,18 @@ router.get('/food/:id/editfood', function(req, res, next) {
 router.get('/meal', function(req, res, next){
   console.log('GET MEAL')
   
-  var viewObject = [];
   mealsCollection.find({}, function (err, meals) {
-    var mealObject = {_id: mealObject}
-    for (var i = 0; i < meals.length; i++) {
-      var food_id_one = meals[i].meal_item1
-console.log (meals[i], 'MEALSI')
-      // var food_id_two = meals[i].meal_item2
-
-console.log('ACCUMULATOR')
-      foodsCollection.find({_id: food_id_one}, function(err, food) {
-      });
-console.log(food_id_one, 'FOOD_ID_ONE')
-console.log(mealObject, 'MEAL OBJECT')
-console.log(viewObject, 'VIEWOBJECT')
-      // foodsCollection.find({_id: meal_item1}, function(err, food) {      
-      // });
-      viewObject.push(mealObject);
-      // when the viewObject has a length of meals.length
-      // res.render
-    }
-// for each meal, grab the meal_item_1 id
-// query foods with meal_item_1 id
-// push the food into the accumulator
-// for each meal, 
-// grab the meal_item_2 id
-// query foods with meal_item_2 id
-// push the food into the accumulator
-                // var meal = {};
-                //   meal.name = req.body.name
-                //   meal.foods = []
-                //   meal.foods.push(req.body.meal_item1)
-                //   meal.foods.push(req.body.meal_item2)
-                //   console.log(meal)
-                //   mealsCollection.insert(meal);
-                // var ingredient = {};
-                // ingredient.name = req.body.name
-                // ingredient.specs = []
-                // ingredient.specs.push(req.body.protien_grams)
-                // mealsCollection.insert(food.protien_grams)
-
-
-  res.render('meal', {allMeals: meals});
+    foodsCollection.find({}, function(err, foods) {
+      for (var i = 0; i < meals.length; i++) {
+        var food_id_one = meals[i].meal_item1
+          for (var j = 0; j < foods.length; j++) {
+            if (food_id_one == foods[j]._id){
+              meals[i].ingredient1 = foods[j]
+            }
+          }
+      }
+      res.render('meal', {allMeals: meals});
+    });
   });
 });
 

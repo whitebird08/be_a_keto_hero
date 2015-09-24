@@ -25,7 +25,7 @@ block content
         .fatP_wrapper
           .quantityPercentFat 0%
           .fatP fat
-        .carbP_wrapper
+        .carbP_wrapperx
           .quantityPercentCho 0%
           .carbP carb
       .amount_and_name_food_wrapper
@@ -85,6 +85,8 @@ block content
           a(meal._id)= meal.meal_item1 
         td 
           a(meal._id)= meal.meal_item2
+        td 
+          a(meal) #{meal.ingredient1.total_grams}
         
   tr
     a(href='/meal/' + meal._id + '/editmeal') Edit

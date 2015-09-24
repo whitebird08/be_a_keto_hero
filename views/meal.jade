@@ -22,11 +22,11 @@ block content
             td
                 a(meal._id)= meal.name
             td
-                a(meal._id)= meal.meal_item1  
-            //- td
-            //-     a(meal._id)= meal.
+                a(meal) #{meal.ingredient1.total_grams} 
             td
-                a(meal._id)= meal.meal_item2
+                a(meal) #{meal.ingredient1.food_name}
+            td
+                a(meal) #{meal.ingredient1.food_name}
             td
                 a(href='/meal/' + meal._id + '/editmeal') Edit
 
