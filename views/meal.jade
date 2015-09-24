@@ -10,14 +10,10 @@ block content
       tr
         th Show
         th Meal Name
-        th PRO%
-        th FAT%
-        th CHO%
-        th quantity
         th Food Name
-        th PROg
-        th FATg
-        th CHOg
+        th Food Name
+        th Edit
+
 
     for meal in allMeals
           tr
@@ -26,7 +22,9 @@ block content
             td
                 a(meal._id)= meal.name
             td
-                a(meal._id)= meal.meal_item1
+                a(meal._id)= meal.meal_item1  
+            //- td
+            //-     a(meal._id)= meal.
             td
                 a(meal._id)= meal.meal_item2
             td

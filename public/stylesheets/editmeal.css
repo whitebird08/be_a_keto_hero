@@ -1,0 +1,414 @@
+
+
+/*.dark-primary-color    { background: #0288D1; }
+.default-primary-color { background: #03A9F4; }
+.light-primary-color   { background: #B3E5FC; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #536DFE; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+*/
+body{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*.parent_wrapper{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  width:400px;
+  height:650;
+
+}*/
+
+
+h1{
+  font-family: helvetica;
+  font-weight: bold;
+  font-size: 64px;
+  font-style: italic;
+  color:#536DFE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*//375 x 627px*/
+.header{
+  width:400px ;
+  height: 50px;
+  background-color: #536DFE;
+  align-content:stretch;
+ font-family: helvetica;
+  font-size: 36px;
+  color:cyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+}
+.food_container{
+ display:flex;
+ flex-direction:column;
+  width:400px;
+  height: 50px;
+  flex-wrap: wrap;
+  text-align:center;
+  font-family: helvetica;
+ /* display: flex;
+  justify-content:center;
+  align-items:center;
+*/
+}
+
+.percent_wrapper{
+
+  height:50px;
+  width:150px;
+  background-color: orange;
+  color:#536DFE;
+  border:0px solid red;
+  order:0;
+}
+.adjust_qty_lower{
+  height:50px;
+  width:150px;
+  border:0px solid grey;
+  background-color: black;
+  color:white;
+  font-weight: bold;
+  font-size: 42px;
+  order:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.proP_wrapper{
+  float:left;
+  height:100px;
+  width:50px;
+  background-color:orange
+  border:0px solid red;
+  order:0;
+}
+.quantityPercentPro{
+  float:left;
+  height:25px;
+  width:50px;
+  background-color:cyan;
+  /*color: white;*/
+  border:0px solid ;
+  order:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proP{
+  float:left;
+  height: 25px;
+  width: 50px;
+  background-color: #03A9FA;
+  border: 0px solid green;
+  color:cyan;
+  order:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fatP_wrapper{
+  float:left;
+  height:100px;
+  width:50px;
+  background-color:orange
+  border:0px solid red;
+  order:0;
+}
+.quantityPercentFat{
+  float:left;
+  height:25px;
+  width:50px;
+  background-color:cyan;
+  border:0px solid goldenrod;
+  order:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fatP{
+  float:left;
+  height: 25px;
+  width:50px;
+  background-color:#03A9FA;
+  border: 0px solid #B3E5FC;
+  color:cyan;
+  order:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carbP_wrapper{
+  float:left;
+  height:100px;
+  width:50px;
+  background-color:orange
+  border:0px solid red;
+  order:0;
+}
+.quantityPercentCho{
+  float:left;
+  height:25px;
+  width:50px;
+  background-color:cyan;
+  border:0px solid goldenrod;
+  order:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carbP{
+  float:left;
+  height: 25px;
+  width:50px;
+  background-color: #03A9FA;
+  border:0px solid ;
+  color:cyan;
+  order:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amount_name_food_wrapper{
+  height:100px;
+  width:100px;
+  background-color:#03A9FA;
+  border: 0px solid red;
+  order:2;
+
+}
+.amount_food{
+  height:65px;
+  width:100px;
+  background-color:#536DFE;
+  color:white;
+  border: 0px solid red;
+  order:2;display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+}
+
+.name_food{
+  height:35px;
+  width:100px;
+  background-color:#03A9FA;
+  border: 0px solid red;
+  color:cyan;
+  order:2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grams_wrapper{
+
+  height:50px;
+  width:150px;
+  background-color: orange;
+  color:#536DFE;
+  border:0px solid red;
+  order:0;
+}
+
+.adjust_qty_higher{
+  float: left;
+  height:50px;
+  width:150px;
+  border:0px solid grey;
+  background-color: black;
+  color:white;
+  font-weight: bold;
+  font-size: 42px;
+  order:3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proG_wrapper{
+  float:left;
+  height:100px;
+  width:50px;
+  background-color:orange
+  border:0px solid red;
+  order:3;
+}
+.quantityGramsPro{
+  float:left;
+  height:25px;
+  width:50px;
+  background-color:cyan;
+  border:0px solid goldenrod;
+  order:3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proG{
+  float:left;
+  height: 25px;
+  width: 50px;
+  background-color: #03A9FA;
+  border: 0px solid green;
+  color: cyan;
+  order:4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fatG_wrapper{
+  float:left;
+  height:100px;
+  width:50px;
+  background-color:orange
+  border:0px solid red;
+  order:3;
+}
+.quantityGramsFat{
+  float:left;
+  height:25px;
+  width:50px;
+  background-color:cyan;
+  border:0px solid goldenrod;
+  order:3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fatG{
+  float:left;
+  height: 25px;
+  width:50px;
+  background-color:#03A9FA;
+  border:0px solid #B3E5FC;
+  color:cyan;
+  order:4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carbG_wrapper{
+  float:left;
+  height:100px;
+  width:50px;
+  background-color:orange
+  border:0px solid red;
+  order:3;
+}
+.quantityGramsCho{
+  float:left;
+  height:25px;
+  width:50px;
+  background-color:cyan;
+  border:0px solid goldenrod;
+  order:3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carbG{
+  float:left;
+  height: 25px;
+  width:50px;
+  background-color: #03A9FA;
+  border: 0px solid #03A9FA;
+  color:cyan;
+  order:4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.food_container2{
+  padding-top:50px;
+ display:flex;
+ flex-direction:column;
+  width:400px;
+  height: 50px;
+  flex-wrap: wrap;
+  text-align:center;
+  font-family: helvetica;
+  color:;
+}
+/*.dark-primary-color    { background: #0288D1; }
+.default-primary-color { background: #03A9F4; }
+.light-primary-color   { background: #B3E5FC; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #03A9F4; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }*/
+
+.food_container3{
+  padding-top:50px;
+ display:flex;
+ flex-direction:column;
+  width:400px;
+  height: 50px;
+  flex-wrap: wrap;
+  text-align:center;
+  font-family: helvetica;
+  color:;
+}
+
+.food_container4{
+  padding-top:50px;
+ display:flex;
+ flex-direction:column;
+  width:400px;
+  height: 50px;
+  flex-wrap: wrap;
+  text-align:center;
+  font-family: helvetica;
+  color:;
+}
+
+.food_container5{
+  padding-top:50px;
+ display:flex;
+ flex-direction:column;
+  width:400px;
+  height: 50px;
+  flex-wrap: wrap;
+  text-align:center;
+  font-family: helvetica;
+  color:;
+}
+
+.food_containerTotal{
+  padding-top:50px;
+ display:flex;
+ flex-direction:column;
+  width:400px;
+  height: 50px;
+  flex-wrap: wrap;
+  text-align:center;
+  font-family: helvetica;
+
+/*}http://materialdesignblog.com/googles-material-design-utilized-in-mobile-web-data-visualization/*/
+  
+
+
+
+
+
+
+

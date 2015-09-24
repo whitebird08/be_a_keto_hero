@@ -1,10 +1,58 @@
 extends layout
 
 block content
+  
+
+
+  head
+    title Jade
+    script(type='text/javascript').
+      foo = true;
+      bar = function () {};
+      if (foo) {
+      bar(1 + 5)
+      }
+  body
+    h1 ketoHero
+    .header 
+      //- a(meal._id)= meal.name
+    .food_container
+      .percent_wrapper
+        input.adjust_qty_lower(type='submit', name='subtract', value='-')
+        .proP_wrapper
+          .quantityPercentPro 
+            td= allFoods.protien_grams
+          .proP pro
+        .fatP_wrapper
+          .quantityPercentFat 
+            td= allFoods.fat_grams
+          .fatP fat
+        .carbP_wrapper
+          .quantityPercentCho 
+            td= allFoods.carbs_grams
+          .carbP carb
+      .amount_and_name_food_wrapper
+        .amount_food 
+          td= allFoods.total_grams 
+        .name_food 
+          td= allFoods.food_name
+      .grams_wrapper
+        input.adjust_qty_higher(type='submit', name='add', value='+')
+        .proG_wrapper
+          .quantityGramsPro 
+            td= allFoods.protien_grams
+          .proG pro
+        .fatG_wrapper
+          .quantityGramsFat 
+            td= allFoods.fat_grams
+          .fatG fat
+        .carbG_wrapper
+          .quantityGramsCho 
+            td= allFoods.carbs_grams
+          .carbG carb
 
   h1 Showing 
       
- 
   table(border='1')
     thead
       tr
@@ -29,3 +77,4 @@ block content
   tr
     form(action='/food/' + allFoods._id + "/delete", method='post', name='delete')
       button(type='submit') Delete
+

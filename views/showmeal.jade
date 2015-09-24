@@ -2,10 +2,78 @@ extends layout
 
 block content
 
-  h1 Showing Meal
+
+
+  head
+    title Jade
+    script(type='text/javascript').
+      foo = true;
+      bar = function () {};
+      if (foo) {
+      bar(1 + 5)
+      }
+  body
+    h1 ketoHero
+    .header 
+      a(meal._id)= meal.name
+    .food_container
+      .percent_wrapper
+        input.adjust_qty_lower(type='submit', name='subtract', value='-')
+        .proP_wrapper
+          .quantityPercentPro 0%
+          .proP pro
+        .fatP_wrapper
+          .quantityPercentFat 0%
+          .fatP fat
+        .carbP_wrapper
+          .quantityPercentCho 0%
+          .carbP carb
+      .amount_and_name_food_wrapper
+        .amount_food 
+        .name_food 
+          a(meal._id)= meal.meal_item1
+      .grams_wrapper
+        input.adjust_qty_higher(type='submit', name='add', value='+')
+        .proG_wrapper
+          .quantityGramsPro 0g
+          .proG pro
+        .fatG_wrapper
+          .quantityGramsFat 0g
+          .fatG fat
+        .carbG_wrapper
+          .quantityGramsCho 0g
+          .carbG carb
+
 
   table(border='1')
     thead
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+      tr
+
+
       tr
         th Name
         th Food1
@@ -14,12 +82,10 @@ block content
         td
           a(meal._id)= meal.name
         td
-          a(meal._id)= meal.meal_item1
+          a(meal._id)= meal.meal_item1 
         td 
-          a(meal._id)= meal.meal_item2  
-          
-
-              
+          a(meal._id)= meal.meal_item2
+        
   tr
     a(href='/meal/' + meal._id + '/editmeal') Edit
   tr
@@ -27,3 +93,4 @@ block content
   tr
     form(action='/meal/' + meal._id + "/delete", method='post', name='delete')
       button(type='submit') Delete
+  

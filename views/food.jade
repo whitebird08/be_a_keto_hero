@@ -7,18 +7,30 @@ block content
   table(border='1')
     thead
       tr
-        th Show
+        //- th Show
+        th Decrease
+        th Pro
+        th Fat
+        th Cho
         th Name
         th Pro
         th Fat
         th Cho
-        th Edit 
-        th Add To Meal
+        th Increase
+        //- th Add To Meal
 
     for food in allFoods
       tr
-        th 
-            a(href='/food/' + food._id) Show
+        //- th 
+        //-     a(href='/food/' + food._id) Show
+        td
+            a(href='/food/' + food._id + '/editfood') Edit
+        td
+            a(href='/food/' + food._id)= food.protien_grams
+        td
+            a(href='/food/' + food._id)= food.fat_grams
+        td
+            a(href='/food/' + food._id)= food.carbs_grams
         td
             a(href='/food/' + food._id)= food.food_name
         td
@@ -27,11 +39,15 @@ block content
             a(href='/food/' + food._id)= food.fat_grams
         td
             a(href='/food/' + food._id)= food.carbs_grams
+        //- td
+        //-     a(href='/food/' meal._id + food._id)= food.protien_grams
+        //- td
+        //-     a(href='/food/' meal._id)= meal._id 
         td
             a(href='/food/' + food._id + '/editfood') Edit
 
-        td
-            a(href='/meal/:id/editmeal') Add To Meal
+        //- td
+        //-     a(href='/meal/:id/editmeal') Add To Meal
   tr
     a(href="/food/newfood") Add New Food
  
