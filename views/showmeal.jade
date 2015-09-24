@@ -76,17 +76,16 @@ block content
 
       tr
         th Name
+        th Grams
         th Food1
-        th Food2
       tr
         td
           a(meal._id)= meal.name
-        td
-          a(meal._id)= meal.meal_item1 
         td 
-          a(meal._id)= meal.meal_item2
+          a(meal) #{meal.ingredient1.total_grams} 
         td 
-          a(meal) #{meal.ingredient1.total_grams}
+          a(meal) #{meal.ingredient1.food_name}
+        
         
   tr
     a(href='/meal/' + meal._id + '/editmeal') Edit

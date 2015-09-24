@@ -86,7 +86,22 @@ router.get('/meal/newmeal', function(req, res, next){
 
 router.get('/meal/:id', function(req, res, next) {
   mealsCollection.findOne({_id: req.params.id}, function (err, meal) {
-    res.render('showmeal',{meal: meal}); 
+
+    foodsCollection.find({}, function(err, foods) {
+   
+        var food_id_one = meal.foods[0]
+          for (var j = 0; j < foods.length; j++) {
+            if (food_id_one == foods[j]._id){
+              console.log(foods[j])
+              meal.ingredient1 = foods[j]
+              // meals[i].ingredient2 = foods[j]
+            }
+          }
+      
+       res.render('showmeal',{meal: meal});
+    });
+
+    
   });
 });
 
@@ -170,8 +185,8 @@ router.post('/meal/:id/editmeal', function(req, res, next) {
 console.log('POST EDITMEAL')
   mealsCollection.updateById(req.params.id, {
                           name: req.body.name,
-                          meal_item1: req.body.meal_item1,
-                          meal_item2: req.body.meal_item2                   
+                          foods: [req.body.meal_item1,
+                          req.body.meal_item2 ]                  
                         },function (err, meals) {
   res.redirect('/meal/' + req.params.id);
 
