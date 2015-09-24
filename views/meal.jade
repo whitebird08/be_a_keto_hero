@@ -9,9 +9,28 @@ block content
     thead
       tr
         th Show
+          td
+      tr
         th Meal Name
+      tr
+          td
+      tr
         th Food Name
+      tr
+          //- td
+          //-     a(meal) #{meal.ingredient1.total_grams} 
+          //- td
+          //-     a(meal) #{meal.ingredient1.food_name}
+          //- td
+          //-     a(meal) #{meal.ingredient1.protien_grams}
+          //- td
+          //-     a(meal) #{meal.ingredient1.fat_grams}
+          //- td
+          //-     a(meal) #{meal.ingredient1.carbs_grams}
+      tr
         th Food Name
+          td
+      tr
         th Edit
 
 
@@ -26,7 +45,11 @@ block content
             td
                 a(meal) #{meal.ingredient1.food_name}
             td
-                a(meal) #{meal.ingredient1.food_name}
+                a(meal) #{meal.ingredient1.protien_grams}
+            td
+                a(meal) #{meal.ingredient1.fat_grams}
+            td
+                a(meal) #{meal.ingredient1.carbs_grams}
             td
                 a(href='/meal/' + meal._id + '/editmeal') Edit
 

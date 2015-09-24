@@ -44,10 +44,12 @@ router.get('/meal', function(req, res, next){
   mealsCollection.find({}, function (err, meals) {
     foodsCollection.find({}, function(err, foods) {
       for (var i = 0; i < meals.length; i++) {
-        var food_id_one = meals[i].meal_item1
+        var food_id_one = meals[i].foods[0]
           for (var j = 0; j < foods.length; j++) {
             if (food_id_one == foods[j]._id){
+              console.log(foods[j])
               meals[i].ingredient1 = foods[j]
+              // meals[i].ingredient2 = foods[j] 
             }
           }
       }
@@ -60,8 +62,25 @@ router.get('/meal', function(req, res, next){
 router.get('/meal/newmeal', function(req, res, next){
   console.log('NEWMEAL?????')
   foodsCollection.find({}, function (err, foods) {
+///////////
+    mealsCollection.find({}, function (err, meals) {
+    foodsCollection.find({}, function(err, foods) {
+      for (var i = 0; i < meals.length; i++) {
+        var food_id_one = meals[i].foods[0]
+          for (var j = 0; j < foods.length; j++) {
+            if (food_id_one == foods[j]._id){
+              console.log(foods[j])
+              meals[i].ingredient1 = foods[j]
+              // meals[i].ingredient2 = foods[j]
+            }
+          }
+      }
+    });
+    });
+/////////////
     res.render('newmeal', {allFoods: foods});
   });
+
   console.log('GET NEWMEAL')
 });
 
@@ -75,8 +94,7 @@ router.get('/meal/:id/editmeal', function(req, res, next) {
   console.log('GET EDITMEAL')
   mealsCollection.findOne({_id: req.params.id}, function (err, meal) {   
     foodsCollection.find({}, function (err, foods) {    
-      // foodsCollection.findOne({_id: req.params.id}, function (err, foods) { 
-      // });       
+      
   res.render('editmeal',{theMeal: meal, allFoods: foods});
     });        
   });
@@ -134,25 +152,8 @@ router.post('/meal', function(req, res, next) {
   meal.foods = []
   meal.foods.push(req.body.meal_item1)
   meal.foods.push(req.body.meal_item2)
-  // meal.foods.push(req.body.total_grams)
-  // meal.foods.push(req.body.food_name)
-  // meal.foods.push(req.body.protien_grams)
-  // meal.foods.push(req.body.fat_grams)
-  // meal.foods.push(req.body.carbs_grams)
   console.log(meal)
   mealsCollection.insert(meal);
-
-
-    // var ingredient = {};
-    // ingredient.name = req.body.name
-    // ingredient.specs = []
-    // ingredient.specs.push(
-    //                     req.body.total_grams, 
-    //                     req.body.food_name, 
-    //                     req.body.protien_grams, 
-    //                     req.body.fat_grams,
-    //                     req.body.carbs_grams)
-    // mealsCollection.insert(protien_grams)
 
   res.redirect('/meal');
  });
