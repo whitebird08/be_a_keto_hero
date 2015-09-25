@@ -25,13 +25,14 @@ block content
         .fatP_wrapper
           .quantityPercentFat 0%
           .fatP fat
-        .carbP_wrapperx
+        .carbP_wrapper
           .quantityPercentCho 0%
           .carbP carb
       .amount_and_name_food_wrapper
         .amount_food 
+          a(meal) #{meal.ingredient1.total_grams}g
         .name_food 
-          a(meal._id)= meal.meal_item1
+           a(meal) #{meal.ingredient1.food_name}
       .grams_wrapper
         input.adjust_qty_higher(type='submit', name='add', value='+')
         .proG_wrapper
