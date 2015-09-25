@@ -90,6 +90,9 @@ console.log(meal)
    
         var food_id_one = meal.foods[0]
         var food_id_two = meal.foods[1]
+        var food_id_three = meal.foods[2]
+        var food_id_four = meal.foods[3]
+        var food_id_five = meal.foods[4]
           for (var j = 0; j < foods.length; j++) {
             if (food_id_one == foods[j]._id){
               console.log(foods[j])
@@ -102,6 +105,25 @@ console.log(meal)
               meal.foodTwo = foods[j]
             }
           }
+          for (var j = 0; j < foods.length; j++) {
+            if (food_id_three == foods[j]._id){
+              console.log(foods[j])
+              meal.foodThree = foods[j]
+            }
+          }
+          for (var j = 0; j < foods.length; j++) {
+            if (food_id_four == foods[j]._id){
+              console.log(foods[j])
+              meal.foodFour = foods[j]
+            }
+          }
+          for (var j = 0; j < foods.length; j++) {
+            if (food_id_five == foods[j]._id){
+              console.log(foods[j])
+              meal.foodFive = foods[j]
+            }
+          }
+
     console.log(meal)  
        res.render('showmeal',{meal: meal});
     });

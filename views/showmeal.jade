@@ -17,151 +17,142 @@ block content
         input.adjust_qty_lower(type='submit', name='subtract', value='-')
         .proP_wrapper
           .quantityPercentPro
-            a(meal) #{meal.foods.protien_grams}%
+            a(meal) #{meal.foodOne.protien_grams}%
           .proP pro
         .fatP_wrapper
           .quantityPercentFat 
-            a(meal) #{meal.foods.fat_grams}%
+            a(meal) #{meal.foodOne.fat_grams}%
           .fatP fat
         .carbP_wrapper
           .quantityPercentCho 
-            a(meal) #{meal.foods.carbs_grams}%
+            a(meal) #{meal.foodOne.carbs_grams}%
           .carbP carb
       .amount_and_name_food_wrapper
         .amount_food 
-          a(meal) #{meal.foods.total_grams}g
+          a(meal) #{meal.foodOne.total_grams}g
         .name_food 
-          select(name='meal_item1')
-            //- for food in allFoods
-              option(value=food._id)= food.food_name
-          a(meal) #{meal.foods.food_name}
+          a(meal) #{meal.foodOne.food_name}
       .grams_wrapper
         input.adjust_qty_higher(type='submit', name='add', value='+')
         .proG_wrapper
           .quantityGramsPro 
-            a(meal) #{meal.foods.protien_grams}g
+            a(meal) #{meal.foodOne.protien_grams}g
           .proG pro
         .fatG_wrapper
           .quantityGramsFat 
-            a(meal) #{meal.foods.fat_grams}g  
+            a(meal) #{meal.foodOne.fat_grams}g  
           .fatG fat
         .carbG_wrapper
           .quantityGramsCho 
-            a(meal) #{meal.foods.carbs_grams}g
+            a(meal) #{meal.foodOne.carbs_grams}g
           .carbG carb  
+
 
     .food_container2
       .percent_wrapper
         input.adjust_qty_lower(type='submit', name='subtract', value='-')
         .proP_wrapper
           .quantityPercentPro
-            a(meal) #{meal.foods.protien_grams}%
+            a(meal) #{meal.foodTwo.protien_grams}%
           .proP pro
         .fatP_wrapper
           .quantityPercentFat 
-            a(meal) #{meal.foods.fat_grams}%
+            a(meal) #{meal.foodTwo.fat_grams}%
           .fatP fat
         .carbP_wrapper
           .quantityPercentCho 
-            a(meal) #{meal.foods.carbs_grams}%
+            a(meal) #{meal.foodTwo.carbs_grams}%
           .carbP carb
       .amount_and_name_food_wrapper
         .amount_food 
-          a(meal) #{meal.foods.total_grams}g
+          a(meal) #{meal.foodTwo.total_grams}g
         .name_food 
-          select(name='meal_item2')
-            //- for food in allFoods
-              option(value=food._id)= food.food_name
-          a(meal) #{meal.foods.food_name}
+          a(meal) #{meal.foodTwo.food_name}
       .grams_wrapper
         input.adjust_qty_higher(type='submit', name='add', value='+')
         .proG_wrapper
           .quantityGramsPro 
-            a(meal) #{meal.foods.protien_grams}g
+            a(meal) #{meal.foodTwo.protien_grams}g
           .proG pro
         .fatG_wrapper
           .quantityGramsFat 
-            a(meal) #{meal.foods.fat_grams}g  
+            a(meal) #{meal.foodTwo.fat_grams}g  
           .fatG fat
         .carbG_wrapper
           .quantityGramsCho 
-            a(meal) #{meal.foods.carbs_grams}g
+            a(meal) #{meal.foodTwo.carbs_grams}g
           .carbG carb  
+
 
     .food_container3
       .percent_wrapper
         input.adjust_qty_lower(type='submit', name='subtract', value='-')
         .proP_wrapper
           .quantityPercentPro
-            a(meal) #{meal.foods.protien_grams}%
+            a(meal) #{meal.foodThree.protien_grams}%
           .proP pro
         .fatP_wrapper
           .quantityPercentFat 
-            a(meal) #{meal.foods.fat_grams}%
+            a(meal) #{meal.foodThree.fat_grams}%
           .fatP fat
         .carbP_wrapper
           .quantityPercentCho 
-            a(meal) #{meal.foods.carbs_grams}%
+            a(meal) #{meal.foodThree.carbs_grams}%
           .carbP carb
       .amount_and_name_food_wrapper
         .amount_food 
-          a(meal) #{meal.foods.total_grams}g
+          a(meal) #{meal.foodThree.total_grams}g
         .name_food 
-          select(name='meal_item3')
-            //- for food in allFoods
-              option(value=food._id)= food.food_name
-          a(meal) #{meal.foods.food_name}
+          a(meal) #{meal.foodThree.food_name}
       .grams_wrapper
         input.adjust_qty_higher(type='submit', name='add', value='+')
         .proG_wrapper
           .quantityGramsPro 
-            a(meal) #{meal.foods.protien_grams}g
+            a(meal) #{meal.foodThree.protien_grams}g
           .proG pro
         .fatG_wrapper
           .quantityGramsFat 
-            a(meal) #{meal.foods.fat_grams}g  
+            a(meal) #{meal.foodThree.fat_grams}g  
           .fatG fat
         .carbG_wrapper
           .quantityGramsCho 
-            a(meal) #{meal.foods.carbs_grams}g
+            a(meal) #{meal.foodThree.carbs_grams}g
           .carbG carb  
+          
 
     .food_container4
       .percent_wrapper
         input.adjust_qty_lower(type='submit', name='subtract', value='-')
         .proP_wrapper
           .quantityPercentPro
-            a(meal) #{meal.foods.protien_grams}%
+            a(meal) #{meal.foodFour.protien_grams}%
           .proP pro
         .fatP_wrapper
           .quantityPercentFat 
-            a(meal) #{meal.foods.fat_grams}%
+            a(meal) #{meal.foodFour.fat_grams}%
           .fatP fat
         .carbP_wrapper
           .quantityPercentCho 
-            a(meal) #{meal.foods.carbs_grams}%
+            a(meal) #{meal.foodFour.carbs_grams}%
           .carbP carb
       .amount_and_name_food_wrapper
         .amount_food 
-          a(meal) #{meal.foods.total_grams}g
+          a(meal) #{meal.foodFour.total_grams}g
         .name_food 
-          select(name='meal_item4')
-            //- for food in allFoods
-              option(value=food._id)= food.food_name
-          a(meal) #{meal.foods.food_name}
+          a(meal) #{meal.foodFour.food_name}
       .grams_wrapper
         input.adjust_qty_higher(type='submit', name='add', value='+')
         .proG_wrapper
           .quantityGramsPro 
-            a(meal) #{meal.foods.protien_grams}g
+            a(meal) #{meal.foodFour.protien_grams}g
           .proG pro
         .fatG_wrapper
           .quantityGramsFat 
-            a(meal) #{meal.foods.fat_grams}g  
+            a(meal) #{meal.foodFour.fat_grams}g  
           .fatG fat
         .carbG_wrapper
           .quantityGramsCho 
-            a(meal) #{meal.foods.carbs_grams}g
+            a(meal) #{meal.foodFour.carbs_grams}g
           .carbG carb  
 
 
@@ -170,37 +161,34 @@ block content
         input.adjust_qty_lower(type='submit', name='subtract', value='-')
         .proP_wrapper
           .quantityPercentPro
-            a(meal) #{meal.foods.protien_grams}%
+            a(meal) #{meal.foodFive.protien_grams}%
           .proP pro
         .fatP_wrapper
           .quantityPercentFat 
-            a(meal) #{meal.foods.fat_grams}%
+            a(meal) #{meal.foodFive.fat_grams}%
           .fatP fat
         .carbP_wrapper
           .quantityPercentCho 
-            a(meal) #{meal.foods.carbs_grams}%
+            a(meal) #{meal.foodFive.carbs_grams}%
           .carbP carb
       .amount_and_name_food_wrapper
         .amount_food 
-          a(meal) #{meal.foods.total_grams}g
+          a(meal) #{meal.foodFive.total_grams}g
         .name_food 
-          select(name='meal_item5')
-            //- for food in allFoods
-              option(value=food._id)= food.food_name
-          a(meal) #{meal.foods.food_name}
+          a(meal) #{meal.foodFive.food_name}
       .grams_wrapper
         input.adjust_qty_higher(type='submit', name='add', value='+')
         .proG_wrapper
           .quantityGramsPro 
-            a(meal) #{meal.foods.protien_grams}g
+            a(meal) #{meal.foodFive.protien_grams}g
           .proG pro
         .fatG_wrapper
           .quantityGramsFat 
-            a(meal) #{meal.foods.fat_grams}g  
+            a(meal) #{meal.foodFive.fat_grams}g  
           .fatG fat
         .carbG_wrapper
           .quantityGramsCho 
-            a(meal) #{meal.foods.carbs_grams}g
+            a(meal) #{meal.foodFive.carbs_grams}g
           .carbG carb  
 
 
@@ -230,38 +218,91 @@ block content
       tr
   table(border='1')
     thead
+      td
+      td
+      td
+      td
+      td Meal Name:
+      td
+        a(meal._id)= meal.name
+      td
+      td
+      td
+      td
       tr
-        //- th Show
-        th Decrease
+
+        th -
         th Pro
         th Fat
         th Cho
-        th Name1
-        th Pro
-        th Fat
-        th Cho
-        th Increase
-      tr
-        th Name1
         th Grams
         th Food1
-        th Name2
-        th Grams
-        th Food2
-        
+        th Pro
+        th Fat
+        th Cho
+        th +
       tr
+        td -
         td
-          a(meal._id)= meal.name
+          a(meal) #{meal.foodOne.protien_grams}
+        td
+          a(meal) #{meal.foodOne.fat_grams}
+        td
+          a(meal) #{meal.foodOne.carbs_grams}
         td 
           a(meal) #{meal.foodOne.total_grams} 
         td 
           a(meal) #{meal.foodOne.food_name}
         td
-          a(meal._id)= meal.name
+          a(meal) #{meal.foodOne.protien_grams}
+        td
+          a(meal) #{meal.foodOne.fat_grams}
+        td
+          a(meal) #{meal.foodOne.carbs_grams}
+        td +    
+      tr
+        th -
+        th Pro
+        th Fat
+        th Cho
+        th Grams
+        th Food2
+        th Pro
+        th Fat
+        th Cho
+        th +
+      tr
+        td -
+        td
+          a(meal) #{meal.foodTwo.protien_grams}
+        td
+          a(meal) #{meal.foodTwo.fat_grams}
+        td
+          a(meal) #{meal.foodTwo.carbs_grams}
         td 
           a(meal) #{meal.foodTwo.total_grams} 
         td 
           a(meal) #{meal.foodTwo.food_name}
+        td
+          a(meal) #{meal.foodTwo.protien_grams}
+        td
+          a(meal) #{meal.foodTwo.fat_grams}
+        td
+          a(meal) #{meal.foodTwo.carbs_grams}
+        td +    
+
+        
+      //- tr
+      //-   td
+      //-     a(meal._id)= meal.name
+      //-   td 
+      //-     a(meal) #{meal.foodOne.total_grams} 
+      //-   td 
+      //-     a(meal) #{meal.foodOne.food_name}
+      //-   td 
+      //-     a(meal) #{meal.foodTwo.total_grams} 
+      //-   td 
+      //-     a(meal) #{meal.foodTwo.food_name}
 
         
         
