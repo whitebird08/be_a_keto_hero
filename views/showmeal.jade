@@ -5,49 +5,206 @@ block content
 
 
   head
-    title Jade
-    script(type='text/javascript').
-      foo = true;
-      bar = function () {};
-      if (foo) {
-      bar(1 + 5)
-      }
+
   body
     h1 ketoHero
+
+  div
     .header 
-      a(meal._id)= meal.name
+      input(type="text" name="meal_name" placeholder='meal name')
     .food_container
       .percent_wrapper
         input.adjust_qty_lower(type='submit', name='subtract', value='-')
         .proP_wrapper
-          .quantityPercentPro 0%
+          .quantityPercentPro
+            a(meal) #{meal.ingredient1.protien_grams}%
           .proP pro
         .fatP_wrapper
-          .quantityPercentFat 0%
+          .quantityPercentFat 
+            a(meal) #{meal.ingredient1.fat_grams}%
           .fatP fat
         .carbP_wrapper
-          .quantityPercentCho 0%
+          .quantityPercentCho 
+            a(meal) #{meal.ingredient1.carbs_grams}%
           .carbP carb
       .amount_and_name_food_wrapper
         .amount_food 
           a(meal) #{meal.ingredient1.total_grams}g
         .name_food 
-           a(meal) #{meal.ingredient1.food_name}
+          select(name='meal_item1')
+            //- for food in allFoods
+              option(value=food._id)= food.food_name
+          a(meal) #{meal.ingredient1.food_name}
       .grams_wrapper
         input.adjust_qty_higher(type='submit', name='add', value='+')
         .proG_wrapper
-          .quantityGramsPro 0g
+          .quantityGramsPro 
+            a(meal) #{meal.ingredient1.protien_grams}g
           .proG pro
         .fatG_wrapper
-          .quantityGramsFat 0g
+          .quantityGramsFat 
+            a(meal) #{meal.ingredient1.fat_grams}g  
           .fatG fat
         .carbG_wrapper
-          .quantityGramsCho 0g
-          .carbG carb
+          .quantityGramsCho 
+            a(meal) #{meal.ingredient1.carbs_grams}g
+          .carbG carb  
+
+    .food_container2
+      .percent_wrapper
+        input.adjust_qty_lower(type='submit', name='subtract', value='-')
+        .proP_wrapper
+          .quantityPercentPro
+            a(meal) #{meal.ingredient1.protien_grams}%
+          .proP pro
+        .fatP_wrapper
+          .quantityPercentFat 
+            a(meal) #{meal.ingredient1.fat_grams}%
+          .fatP fat
+        .carbP_wrapper
+          .quantityPercentCho 
+            a(meal) #{meal.ingredient1.carbs_grams}%
+          .carbP carb
+      .amount_and_name_food_wrapper
+        .amount_food 
+          a(meal) #{meal.ingredient1.total_grams}g
+        .name_food 
+          select(name='meal_item2')
+            //- for food in allFoods
+              option(value=food._id)= food.food_name
+          a(meal) #{meal.ingredient1.food_name}
+      .grams_wrapper
+        input.adjust_qty_higher(type='submit', name='add', value='+')
+        .proG_wrapper
+          .quantityGramsPro 
+            a(meal) #{meal.ingredient1.protien_grams}g
+          .proG pro
+        .fatG_wrapper
+          .quantityGramsFat 
+            a(meal) #{meal.ingredient1.fat_grams}g  
+          .fatG fat
+        .carbG_wrapper
+          .quantityGramsCho 
+            a(meal) #{meal.ingredient1.carbs_grams}g
+          .carbG carb  
+
+    .food_container3
+      .percent_wrapper
+        input.adjust_qty_lower(type='submit', name='subtract', value='-')
+        .proP_wrapper
+          .quantityPercentPro
+            a(meal) #{meal.ingredient1.protien_grams}%
+          .proP pro
+        .fatP_wrapper
+          .quantityPercentFat 
+            a(meal) #{meal.ingredient1.fat_grams}%
+          .fatP fat
+        .carbP_wrapper
+          .quantityPercentCho 
+            a(meal) #{meal.ingredient1.carbs_grams}%
+          .carbP carb
+      .amount_and_name_food_wrapper
+        .amount_food 
+          a(meal) #{meal.ingredient1.total_grams}g
+        .name_food 
+          select(name='meal_item3')
+            //- for food in allFoods
+              option(value=food._id)= food.food_name
+          a(meal) #{meal.ingredient1.food_name}
+      .grams_wrapper
+        input.adjust_qty_higher(type='submit', name='add', value='+')
+        .proG_wrapper
+          .quantityGramsPro 
+            a(meal) #{meal.ingredient1.protien_grams}g
+          .proG pro
+        .fatG_wrapper
+          .quantityGramsFat 
+            a(meal) #{meal.ingredient1.fat_grams}g  
+          .fatG fat
+        .carbG_wrapper
+          .quantityGramsCho 
+            a(meal) #{meal.ingredient1.carbs_grams}g
+          .carbG carb  
+
+    .food_container4
+      .percent_wrapper
+        input.adjust_qty_lower(type='submit', name='subtract', value='-')
+        .proP_wrapper
+          .quantityPercentPro
+            a(meal) #{meal.ingredient1.protien_grams}%
+          .proP pro
+        .fatP_wrapper
+          .quantityPercentFat 
+            a(meal) #{meal.ingredient1.fat_grams}%
+          .fatP fat
+        .carbP_wrapper
+          .quantityPercentCho 
+            a(meal) #{meal.ingredient1.carbs_grams}%
+          .carbP carb
+      .amount_and_name_food_wrapper
+        .amount_food 
+          a(meal) #{meal.ingredient1.total_grams}g
+        .name_food 
+          select(name='meal_item4')
+            //- for food in allFoods
+              option(value=food._id)= food.food_name
+          a(meal) #{meal.ingredient1.food_name}
+      .grams_wrapper
+        input.adjust_qty_higher(type='submit', name='add', value='+')
+        .proG_wrapper
+          .quantityGramsPro 
+            a(meal) #{meal.ingredient1.protien_grams}g
+          .proG pro
+        .fatG_wrapper
+          .quantityGramsFat 
+            a(meal) #{meal.ingredient1.fat_grams}g  
+          .fatG fat
+        .carbG_wrapper
+          .quantityGramsCho 
+            a(meal) #{meal.ingredient1.carbs_grams}g
+          .carbG carb  
+
+
+    .food_container5
+      .percent_wrapper
+        input.adjust_qty_lower(type='submit', name='subtract', value='-')
+        .proP_wrapper
+          .quantityPercentPro
+            a(meal) #{meal.ingredient1.protien_grams}%
+          .proP pro
+        .fatP_wrapper
+          .quantityPercentFat 
+            a(meal) #{meal.ingredient1.fat_grams}%
+          .fatP fat
+        .carbP_wrapper
+          .quantityPercentCho 
+            a(meal) #{meal.ingredient1.carbs_grams}%
+          .carbP carb
+      .amount_and_name_food_wrapper
+        .amount_food 
+          a(meal) #{meal.ingredient1.total_grams}g
+        .name_food 
+          select(name='meal_item5')
+            //- for food in allFoods
+              option(value=food._id)= food.food_name
+          a(meal) #{meal.ingredient1.food_name}
+      .grams_wrapper
+        input.adjust_qty_higher(type='submit', name='add', value='+')
+        .proG_wrapper
+          .quantityGramsPro 
+            a(meal) #{meal.ingredient1.protien_grams}g
+          .proG pro
+        .fatG_wrapper
+          .quantityGramsFat 
+            a(meal) #{meal.ingredient1.fat_grams}g  
+          .fatG fat
+        .carbG_wrapper
+          .quantityGramsCho 
+            a(meal) #{meal.ingredient1.carbs_grams}g
+          .carbG carb  
 
 
   table(border='1')
-    thead
       tr
       tr
       tr
@@ -70,11 +227,6 @@ block content
       tr
       tr
       tr
-      tr
-      tr
-      tr
-
-
       tr
         th Name
         th Grams
@@ -95,4 +247,6 @@ block content
   tr
     form(action='/meal/' + meal._id + "/delete", method='post', name='delete')
       button(type='submit') Delete
+
+
   

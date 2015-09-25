@@ -6,7 +6,11 @@ block content
 
   h1 build a new meal
 
-  form(action="/meal/", method="post")
+  
+  
+form(action="/meal/", method="post")
+
+
     div
     .header 
       input(type="text" name="meal_name" placeholder='meal name')
@@ -200,7 +204,5 @@ block content
           .quantityGramsCho 
             //- a(meal) #{meal.ingredient1.carbs_grams}g
           .carbG carb  
-  
-
     div
       input(type="submit" value='save new meal')  
