@@ -48,7 +48,7 @@ router.get('/meal', function(req, res, next){
           for (var j = 0; j < foods.length; j++) {
             if (food_id_one == foods[j]._id){
               console.log(foods[j])
-              meals[i].ingredient1 = foods[j]
+              meals[i].foods = foods[j]
             }
           }
       }
@@ -69,7 +69,7 @@ router.get('/meal/newmeal', function(req, res, next){
           for (var j = 0; j < foods.length; j++) {
             if (food_id_one == foods[j]._id){
               console.log(foods[j])
-              meals[i].ingredient1 = foods[j]
+              meals[i].foods = foods[j]
             }
           }
       }
@@ -85,16 +85,24 @@ router.get('/meal/newmeal', function(req, res, next){
 router.get('/meal/:id', function(req, res, next) {
   mealsCollection.findOne({_id: req.params.id}, function (err, meal) {
 
+console.log(meal)
     foodsCollection.find({}, function(err, foods) {
    
         var food_id_one = meal.foods[0]
+        var food_id_two = meal.foods[1]
           for (var j = 0; j < foods.length; j++) {
             if (food_id_one == foods[j]._id){
               console.log(foods[j])
-              meal.ingredient1 = foods[j]
+              meal.foodOne = foods[j]
             }
           }
-      
+          for (var j = 0; j < foods.length; j++) {
+            if (food_id_two == foods[j]._id){
+              console.log(foods[j])
+              meal.foodTwo = foods[j]
+            }
+          }
+    console.log(meal)  
        res.render('showmeal',{meal: meal});
     });
 
