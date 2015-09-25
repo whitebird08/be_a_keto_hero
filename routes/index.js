@@ -105,8 +105,10 @@ router.get('/meal/:id', function(req, res, next) {
 router.get('/meal/:id/editmeal', function(req, res, next) {
   console.log('GET EDITMEAL')
   mealsCollection.findOne({_id: req.params.id}, function (err, meal) {   
-      
-  res.render('editmeal',{theMeal: meal, allFoods: foods});
+    foodsCollection.find({}, function(err, foods) {
+   
+      res.render('editmeal',{theMeal: meal, allFoods: foods});
+    });
   });        
 });
 router.post('/food/:id/delete', function(req, res, next) {
