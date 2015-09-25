@@ -1,4 +1,4 @@
-/*.dark-primary-color    { background: #0288D1; }
+ƒ/*.dark-primary-color    { background: #0288D1; }
 .default-primary-color { background: #03A9F4; }
 .light-primary-color   { background: #B3E5FC; }
 .text-primary-color    { color: #FFFFFF; }
@@ -50,6 +50,7 @@ h1{
   justify-content: center;
   align-items: center;
   flex-direction:row;
+
 }
 .food_container{
  display:flex;
@@ -59,6 +60,8 @@ h1{
   flex-wrap: wrap;
   text-align:center;
   font-family: helvetica;
+  padding-bottom: 50px;
+
  /* display: flex;
   justify-content:center;
   align-items:center;

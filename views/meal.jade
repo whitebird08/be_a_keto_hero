@@ -1,32 +1,176 @@
 extends layout
 
 block content
+  
+  body
+  h1 ketoHero
+
+  for meal in allMeals
+   
+    .header 
+      a(meal._id)= meal.name
+    .food_container
+      .percent_wrapper
+        input.adjust_qty_lower(type='submit', name='subtract', value='-')
+        .proP_wrapper
+          .quantityPercentPro
+            a(meal) #{meal.ingredient1.protien_grams}%
+          .proP pro
+        .fatP_wrapper
+          .quantityPercentFat 
+            a(meal) #{meal.ingredient1.fat_grams}%
+          .fatP fat
+        .carbP_wrapper
+          .quantityPercentCho 
+            a(meal) #{meal.ingredient1.carbs_grams}%
+          .carbP carb
+      .amount_and_name_food_wrapper
+        .amount_food 
+          a(meal) #{meal.ingredient1.total_grams}g
+        .name_food 
+          a(meal) #{meal.ingredient1.food_name}
+      .grams_wrapper
+        input.adjust_qty_higher(type='submit', name='add', value='+')
+        .proG_wrapper
+          .quantityGramsPro 
+            a(meal) #{meal.ingredient1.protien_grams}g
+          .proG pro
+        .fatG_wrapper
+          .quantityGramsFat 
+            a(meal) #{meal.ingredient1.fat_grams}g  
+          .fatG fat
+        .carbG_wrapper
+          .quantityGramsCho 
+            a(meal) #{meal.ingredient1.carbs_grams}g
+          .carbG carb
+
+
+    //- .food_container2
+    //-   .percent_wrapper
+    //-     input.adjust_qty_lower(type='submit', name='subtract', value='-')
+    //-     .proP_wrapper
+    //-       .quantityPercentPro 0%
+    //-       .proP pro
+    //-     .fatP_wrapper
+    //-       .quantityPercentFat 0%
+    //-       .fatP fat
+    //-     .carbP_wrapper
+    //-       .quantityPercentCho 0%
+    //-       .carbP carb
+    //-   .amount_and_name_food_wrapper
+    //-     .amount_food  
+    //-       //  - a(meal) #{meal.ingredient1.total_grams}
+    //-     .name_food select/cream
+    //-   .grams_wrapper
+    //-     input.adjust_qty_higher(type='submit', name='add', value='+')
+    //-     .proG_wrapper
+    //-       .quantityGramsPro 0g
+    //-       .proG pro
+    //-     .fatG_wrapper
+    //-       .quantityGramsFat 0g
+    //-       .fatG fat
+    //-     .carbG_wrapper
+    //-       .quantityGramsCho 0g
+    //-       .carbG carb
+
+
+    //- .food_container3
+    //-   .percent_wrapper
+    //-     input.adjust_qty_lower(type='submit', name='subtract', value='-')
+    //-     .proP_wrapper
+    //-       .quantityPercentPro 0%
+    //-       .proP pro
+    //-     .fatP_wrapper
+    //-       .quantityPercentFat 0%
+    //-       .fatP fat
+    //-     .carbP_wrapper
+    //-       .quantityPercentCho 0%
+    //-       .carbP carb
+    //-   .amount_and_name_food_wrapper
+    //-     .amount_food 100g
+    //-     .name_food select/cream
+    //-   .grams_wrapper
+    //-     input.adjust_qty_higher(type='submit', name='add', value='+')
+    //-     .proG_wrapper
+    //-       .quantityGramsPro 0g
+    //-       .proG pro
+    //-     .fatG_wrapper
+    //-       .quantityGramsFat 0g
+    //-       .fatG fat
+    //-     .carbG_wrapper
+    //-       .quantityGramsCho 0g
+    //-       .carbG carb
+    //- .food_container4
+
+
+    //-   .percent_wrapper
+    //-     input.adjust_qty_lower(type='submit', name='subtract', value='-')
+    //-     .proP_wrapper
+    //-       .quantityPercentPro 0%
+    //-       .proP pro
+    //-     .fatP_wrapper
+    //-       .quantityPercentFat 0%
+    //-       .fatP fat
+    //-     .carbP_wrapper
+    //-       .quantityPercentCho 0%
+    //-       .carbP carb
+    //-   .amount_and_name_food_wrapper
+    //-     .amount_food 100g
+    //-     .name_food select/cream
+    //-   .grams_wrapper
+    //-     input.adjust_qty_higher(type='submit', name='add', value='+')
+    //-     .proG_wrapper
+    //-       .quantityGramsPro 0g
+    //-       .proG pro
+    //-     .fatG_wrapper
+    //-       .quantityGramsFat 0g
+    //-       .fatG fat
+    //-     .carbG_wrapper
+    //-       .quantityGramsCho 0g
+    //-       .carbG carb
+
+
+    //- .food_container5
+    //-   .percent_wrapper
+    //-     input.adjust_qty_lower(type='submit', name='subtract', value='-')
+    //-     .proP_wrapper
+    //-       .quantityPercentPro 0%
+    //-       .proP pro
+    //-     .fatP_wrapper
+    //-       .quantityPercentFat 0%
+    //-       .fatP fat
+    //-     .carbP_wrapper
+    //-       .quantityPercentCho 0%
+    //-       .carbP carb
+    //-   .amount_and_name_food_wrapper
+    //-     .amount_food 100g
+    //-     .name_food select/cream
+    //-   .grams_wrapper
+    //-     input.adjust_qty_higher(type='submit', name='add', value='+')
+    //-     .proG_wrapper
+    //-       .quantityGramsPro 0g
+    //-       .proG pro
+    //-     .fatG_wrapper
+    //-       .quantityGramsFat 0g
+    //-       .fatG fat
+    //-     .carbG_wrapper
+    //-       .quantityGramsCho 0g
+    //-       .carbG carb
+
+
+
+    //
+      parent_wrapper
+      <script src=""></script>
+      </body>
+      </html>
+
 
   h1 List of Meals
   a(href='/') Back to Nav
 
   table(border = '1')
     thead
-      tr
-        th Show
-          td
-      tr
-        th Meal Name
-      
-          td
-      tr
-        th Food Name
-      tr
-          //- td
-          //-     a(meal) #{meal.ingredient1.total_grams} 
-          //- td
-          //-     a(meal) #{meal.ingredient1.food_name}
-          //- td
-          //-     a(meal) #{meal.ingredient1.protien_grams}
-          //- td
-          //-     a(meal) #{meal.ingredient1.fat_grams}
-          //- td
-          //-     a(meal) #{meal.ingredient1.carbs_grams}
       tr
         th Food Name
           td

@@ -49,7 +49,6 @@ router.get('/meal', function(req, res, next){
             if (food_id_one == foods[j]._id){
               console.log(foods[j])
               meals[i].ingredient1 = foods[j]
-              // meals[i].ingredient2 = foods[j] 
             }
           }
       }
@@ -71,7 +70,6 @@ router.get('/meal/newmeal', function(req, res, next){
             if (food_id_one == foods[j]._id){
               console.log(foods[j])
               meals[i].ingredient1 = foods[j]
-              // meals[i].ingredient2 = foods[j]
             }
           }
       }
@@ -94,7 +92,6 @@ router.get('/meal/:id', function(req, res, next) {
             if (food_id_one == foods[j]._id){
               console.log(foods[j])
               meal.ingredient1 = foods[j]
-              // meals[i].ingredient2 = foods[j]
             }
           }
       
@@ -108,10 +105,25 @@ router.get('/meal/:id', function(req, res, next) {
 router.get('/meal/:id/editmeal', function(req, res, next) {
   console.log('GET EDITMEAL')
   mealsCollection.findOne({_id: req.params.id}, function (err, meal) {   
-    foodsCollection.find({}, function (err, foods) {    
+    
+    /////////
+//     mealsCollection.find({}, function (err, meals) {
+//     foodsCollection.find({}, function(err, foods) {
+//       for (var i = 0; i < meals.length; i++) {
+//         var food_id_one = meals[i].foods[0]
+//           for (var j = 0; j < foods.length; j++) {
+//             if (food_id_one == foods[j]._id){
+//               console.log(foods[j])
+//               meals[i].ingredient1 = foods[j]
+//             }
+//           }
+//       }
+//     });
+//     });
+// /////////
       
   res.render('editmeal',{theMeal: meal, allFoods: foods});
-    });        
+    // });        
   });
 });
 
